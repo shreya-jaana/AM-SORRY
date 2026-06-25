@@ -1,0 +1,1823 @@
+/* =======================================================
+   FOR MY SARIB 💗
+   STYLE.CSS - PART 1
+   ======================================================= */
+
+:root{
+    --bg-dark:#0d0820;
+    --bg-purple:#1a1035;
+    --pink:#FFB6C1;
+    --cyan:#00FFFF;
+    --lavender:#E6CCFF;
+    --mint:#B5EAD7;
+    --white:#ffffff;
+
+    --glass:rgba(255,255,255,0.08);
+    --glass-border:rgba(255,255,255,0.15);
+
+    --shadow-pink:0 0 15px #FFB6C1,
+                   0 0 30px #FFB6C1;
+
+    --shadow-cyan:0 0 15px #00FFFF,
+                   0 0 30px #00FFFF;
+
+    --shadow-lavender:0 0 15px #E6CCFF,
+                       0 0 30px #E6CCFF;
+
+    --shadow-mint:0 0 15px #B5EAD7,
+                   0 0 30px #B5EAD7;
+
+    --transition:0.8s ease;
+}
+
+/* =======================================================
+   RESET
+   ======================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    font-family:'Poppins',sans-serif;
+    background:#090515;
+    color:white;
+}
+
+body{
+    position:relative;
+}
+
+/* =======================================================
+   PARTICLES
+   ======================================================= */
+
+#particle-container{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:1;
+}
+
+.particle{
+    position:absolute;
+    user-select:none;
+    opacity:.8;
+    animation:floatParticle linear infinite;
+}
+
+@keyframes floatParticle{
+
+    0%{
+        transform:
+        translateY(110vh)
+        rotate(0deg)
+        scale(.7);
+        opacity:0;
+    }
+
+    10%{
+        opacity:.9;
+    }
+
+    90%{
+        opacity:.9;
+    }
+
+    100%{
+        transform:
+        translateY(-120vh)
+        rotate(360deg)
+        scale(1.2);
+        opacity:0;
+    }
+}
+
+/* =======================================================
+   TRANSITION OVERLAY
+   ======================================================= */
+
+#transition-overlay{
+    position:fixed;
+    inset:0;
+    z-index:9999;
+    pointer-events:none;
+    opacity:0;
+}
+
+.overlay-active{
+    animation:flashTransition .9s ease;
+}
+
+@keyframes flashTransition{
+
+    0%{
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+        backdrop-filter:blur(6px);
+    }
+
+    100%{
+        opacity:0;
+    }
+}
+
+/* =======================================================
+   CONFETTI
+   ======================================================= */
+
+#confetti-container{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:300;
+}
+
+.confetti{
+    position:absolute;
+    top:-50px;
+    animation:confettiFall linear forwards;
+}
+
+@keyframes confettiFall{
+
+    from{
+        transform:
+        translateY(-10vh)
+        rotate(0deg);
+    }
+
+    to{
+        transform:
+        translateY(120vh)
+        rotate(1080deg);
+    }
+}
+
+/* =======================================================
+   MUSIC BUTTON
+   ======================================================= */
+
+.music-btn{
+    position:fixed;
+    top:18px;
+    right:18px;
+
+    width:54px;
+    height:54px;
+
+    border:none;
+    border-radius:50%;
+
+    background:rgba(255,255,255,.1);
+
+    color:white;
+
+    cursor:pointer;
+
+    z-index:500;
+
+    font-size:22px;
+
+    backdrop-filter:blur(10px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+    0 0 15px rgba(255,182,193,.4);
+
+    transition:.3s;
+}
+
+.music-btn:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:
+    0 0 20px var(--pink),
+    0 0 40px var(--pink);
+}
+
+/* =======================================================
+   PHASE WRAPPER
+   ======================================================= */
+
+#phaseWrapper{
+    position:relative;
+    width:100%;
+    height:100vh;
+}
+
+.phase{
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    opacity:0;
+    pointer-events:none;
+
+    transform:scale(1.05);
+
+    transition:
+    opacity .8s ease,
+    transform .8s ease;
+
+    z-index:2;
+}
+
+.phase.active{
+    opacity:1;
+    pointer-events:auto;
+    transform:scale(1);
+}
+
+/* =======================================================
+   PHASE CONTENT
+   ======================================================= */
+
+.phase-content{
+    width:min(1000px,92%);
+    max-height:90vh;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    text-align:center;
+
+    gap:20px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    z-index:5;
+}
+
+/* =======================================================
+   PHASE BACKGROUNDS
+   ======================================================= */
+
+.phase0{
+    background:
+    radial-gradient(circle at center,
+    rgba(0,255,255,.15),
+    rgba(26,16,53,1));
+}
+
+.phase1{
+    background:
+    radial-gradient(circle,
+    rgba(255,182,193,.20),
+    rgba(230,204,255,.08),
+    #120b2d);
+}
+
+.phase2{
+    background:
+    radial-gradient(circle,
+    rgba(0,255,255,.15),
+    rgba(255,182,193,.08),
+    #071a22);
+}
+
+.phase3{
+    background:
+    radial-gradient(circle,
+    rgba(181,234,215,.15),
+    rgba(255,255,255,.05),
+    #09151d);
+}
+
+.phase4{
+    background:
+    linear-gradient(
+    135deg,
+    rgba(255,182,193,.18),
+    rgba(0,255,255,.12),
+    rgba(255,230,180,.08));
+}
+
+/* =======================================================
+   TITLES
+   ======================================================= */
+
+.main-title,
+.phase-title,
+.celebration-title{
+
+    font-family:'Dancing Script',cursive;
+    color:var(--pink);
+
+    text-shadow:
+    0 0 10px var(--pink),
+    0 0 20px var(--pink);
+}
+
+.main-title{
+    font-size:clamp(2.3rem,6vw,4.5rem);
+}
+
+.phase-title{
+    font-size:clamp(2rem,5vw,4rem);
+}
+
+.giant{
+    font-size:clamp(2.5rem,7vw,5rem);
+}
+
+.main-subtitle{
+    max-width:650px;
+    line-height:1.8;
+    color:white;
+    font-size:1rem;
+}
+
+/* =======================================================
+   DOOR
+   ======================================================= */
+
+.door-container{
+    position:relative;
+    margin-bottom:15px;
+}
+
+.door-glow{
+
+    position:absolute;
+    inset:-40px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(circle,
+    rgba(0,255,255,.35),
+    transparent);
+
+    animation:pulseDoor 3s infinite;
+}
+
+.door-emoji{
+    position:relative;
+    font-size:8rem;
+    animation:doorFloat 3s ease-in-out infinite;
+}
+
+@keyframes pulseDoor{
+
+    0%,100%{
+        transform:scale(1);
+        opacity:.5;
+    }
+
+    50%{
+        transform:scale(1.3);
+        opacity:1;
+    }
+}
+
+@keyframes doorFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-14px);
+    }
+}
+
+/* =======================================================
+   ARROW
+   ======================================================= */
+
+.down-arrow{
+
+    font-size:2rem;
+
+    color:var(--cyan);
+
+    animation:arrowBounce 1s infinite;
+}
+
+@keyframes arrowBounce{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(10px);
+    }
+}
+
+/* =======================================================
+   BUTTONS
+   ======================================================= */
+
+.glow-btn{
+
+    padding:14px 28px;
+
+    border:none;
+
+    border-radius:999px;
+
+    cursor:pointer;
+
+    color:white;
+
+    background:
+    linear-gradient(
+    135deg,
+    rgba(255,182,193,.25),
+    rgba(0,255,255,.18));
+
+    backdrop-filter:blur(10px);
+
+    font-size:1rem;
+    font-weight:600;
+
+    transition:.35s;
+
+    animation:pulseButton 2.5s infinite;
+
+    box-shadow:
+    0 0 10px rgba(255,182,193,.4),
+    0 0 20px rgba(0,255,255,.3);
+
+    border:1px solid rgba(255,255,255,.15);
+}
+
+.glow-btn:hover{
+
+    transform:translateY(-4px) scale(1.03);
+
+    box-shadow:
+    0 0 20px var(--pink),
+    0 0 40px var(--cyan);
+}
+
+@keyframes pulseButton{
+
+    0%,100%{
+        box-shadow:
+        0 0 15px rgba(255,182,193,.4),
+        0 0 25px rgba(0,255,255,.3);
+    }
+
+    50%{
+        box-shadow:
+        0 0 25px rgba(255,182,193,.8),
+        0 0 50px rgba(0,255,255,.7);
+    }
+}
+
+/* =======================================================
+   GIFS
+   ======================================================= */
+
+.phase-gif{
+    border-radius:22px;
+
+    border:2px solid rgba(255,255,255,.15);
+
+    box-shadow:
+    0 0 20px rgba(255,182,193,.35);
+
+    object-fit:cover;
+}
+
+.gif-large{
+    width:min(320px,80vw);
+}
+
+.gif-medium{
+    width:min(250px,70vw);
+}
+
+.gif-small{
+    width:min(170px,45vw);
+}
+
+.right-gif{
+    align-self:flex-end;
+}
+
+.left-gif{
+    align-self:flex-start;
+}
+
+/* =======================================================
+   LETTER BOX
+   ======================================================= */
+
+.letter-box{
+
+    width:100%;
+
+    background:var(--glass);
+
+    border:1px solid var(--glass-border);
+
+    border-radius:24px;
+
+    padding:25px;
+
+    backdrop-filter:blur(12px);
+
+    box-shadow:
+    0 0 20px rgba(255,255,255,.06);
+
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.line{
+    opacity:0;
+    transform:translateY(20px);
+}
+
+.line.show{
+    opacity:1;
+    transform:translateY(0);
+    transition:.6s;
+}
+
+/* =======================================================
+   SOLUTION BOXES
+   ======================================================= */
+
+.solution-box{
+
+    width:100%;
+
+    padding:22px;
+
+    border-radius:24px;
+
+    backdrop-filter:blur(14px);
+
+    background:rgba(255,255,255,.05);
+
+    line-height:1.8;
+}
+
+.solution-box h3{
+    margin-bottom:10px;
+}
+.cyan{
+    border:2px solid var(--cyan);
+
+    box-shadow:
+    0 0 15px rgba(0,255,255,.35),
+    0 0 35px rgba(0,255,255,.15);
+}
+
+.lavender{
+    border:2px solid var(--lavender);
+
+    box-shadow:
+    0 0 15px rgba(230,204,255,.35),
+    0 0 35px rgba(230,204,255,.15);
+}
+
+.mint{
+    border:2px solid var(--mint);
+
+    box-shadow:
+    0 0 15px rgba(181,234,215,.35),
+    0 0 35px rgba(181,234,215,.15);
+}
+
+/* =======================================================
+   HIDDEN LETTER BUTTONS
+   ======================================================= */
+
+.hidden-trigger{
+
+    position:absolute;
+
+    right:18px;
+    bottom:18px;
+
+    width:55px;
+    height:55px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    color:#ffd700;
+
+    font-size:1.5rem;
+
+    cursor:pointer;
+
+    backdrop-filter:blur(12px);
+
+    animation:blinkStar 1.5s infinite;
+
+    z-index:30;
+}
+
+.moon-trigger{
+    color:#ffffff;
+}
+
+@keyframes blinkStar{
+
+    0%,100%{
+        transform:scale(1);
+        opacity:1;
+    }
+
+    50%{
+        transform:scale(1.2);
+        opacity:.45;
+    }
+}
+
+/* =======================================================
+   ENVELOPE
+   ======================================================= */
+
+.envelope-section{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:30px;
+
+    flex-wrap:wrap;
+}
+
+.envelope{
+
+    width:140px;
+    height:140px;
+
+    border-radius:24px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:4rem;
+
+    cursor:pointer;
+
+    background:
+    linear-gradient(
+    135deg,
+    rgba(255,255,255,.08),
+    rgba(255,255,255,.02));
+
+    border:2px solid var(--lavender);
+
+    box-shadow:
+    0 0 20px rgba(230,204,255,.3);
+
+    transition:.6s;
+}
+
+.envelope:hover{
+    transform:scale(1.08);
+}
+
+.envelope.open{
+
+    transform:
+    rotateY(180deg)
+    scale(1.1);
+
+    box-shadow:
+    0 0 40px rgba(230,204,255,.8);
+}
+
+/* =======================================================
+   TYPEWRITER LETTER
+   ======================================================= */
+
+.hidden{
+    display:none;
+}
+
+#typewriterLetter{
+
+    text-align:left;
+
+    line-height:2;
+
+    min-height:250px;
+}
+
+.type-line{
+
+    opacity:0;
+
+    animation:typeAppear .5s forwards;
+}
+
+@keyframes typeAppear{
+
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* =======================================================
+   FLOATING MESSAGE
+   ======================================================= */
+
+.floating-message{
+
+    position:relative;
+
+    color:white;
+
+    font-weight:500;
+
+    background:
+    rgba(255,255,255,.08);
+
+    padding:12px 18px;
+
+    border-radius:999px;
+
+    backdrop-filter:blur(12px);
+
+    animation:driftMessage 9s linear infinite;
+
+    box-shadow:
+    0 0 20px rgba(255,255,255,.08);
+}
+
+@keyframes driftMessage{
+
+    0%{
+        transform:translateX(-30px);
+    }
+
+    50%{
+        transform:translateX(30px);
+    }
+
+    100%{
+        transform:translateX(-30px);
+    }
+}
+
+/* =======================================================
+   COMIC STRIP
+   ======================================================= */
+
+.comic-strip{
+
+    width:100%;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:15px;
+}
+
+.comic-card{
+
+    min-height:140px;
+
+    border-radius:20px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    gap:12px;
+
+    padding:20px;
+
+    background:
+    rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    backdrop-filter:blur(10px);
+
+    font-size:2rem;
+}
+
+.comic-card span{
+
+    font-size:.9rem;
+
+    line-height:1.6;
+}
+
+/* =======================================================
+   STICKY NOTES GRID
+   ======================================================= */
+
+.sticky-grid{
+
+    width:100%;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:18px;
+}
+
+/* =======================================================
+   FLIP CARDS
+   ======================================================= */
+
+.flip-card{
+
+    perspective:1200px;
+
+    height:220px;
+}
+
+.flip-inner{
+
+    position:relative;
+
+    width:100%;
+    height:100%;
+
+    transition:
+    transform .8s;
+
+    transform-style:
+    preserve-3d;
+}
+
+.flip-card:hover .flip-inner,
+.flip-card.active .flip-inner{
+
+    transform:
+    rotateY(180deg);
+}
+
+.flip-front,
+.flip-back{
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    backface-visibility:hidden;
+
+    border-radius:22px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:20px;
+
+    line-height:1.8;
+}
+
+.flip-front{
+
+    font-weight:700;
+
+    color:#111;
+}
+
+.flip-back{
+
+    transform:
+    rotateY(180deg);
+
+    background:
+    rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    backdrop-filter:blur(12px);
+
+    color:white;
+}
+
+.pink{
+    background:var(--pink);
+}
+
+.white-glow{
+
+    background:white;
+
+    box-shadow:
+    0 0 20px white;
+}
+
+/* =======================================================
+   FORGIVE SECTION
+   ======================================================= */
+
+.forgive-section{
+
+    margin-top:15px;
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:20px;
+}
+
+.forgive-section h3{
+
+    font-family:
+    'Dancing Script',
+    cursive;
+
+    font-size:2.2rem;
+
+    color:white;
+
+    text-shadow:
+    0 0 20px var(--pink);
+}
+
+/* =======================================================
+   METER
+   ======================================================= */
+
+.meter-wrapper{
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:12px;
+}
+
+.meter{
+
+    width:90px;
+    height:320px;
+
+    border-radius:999px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    border:3px solid rgba(255,255,255,.25);
+
+    background:
+    rgba(255,255,255,.05);
+
+    backdrop-filter:blur(12px);
+}
+
+#meterFill{
+
+    position:absolute;
+
+    bottom:0;
+    left:0;
+
+    width:100%;
+    height:0%;
+
+    background:
+    linear-gradient(
+    to top,
+    #ff5b7f,
+    #ffb6c1,
+    #ffffff);
+
+    transition:
+    height .6s ease;
+
+    box-shadow:
+    inset 0 0 20px rgba(255,255,255,.4);
+}
+
+#meterPercent{
+
+    font-size:1.4rem;
+
+    font-weight:700;
+
+    color:white;
+}
+
+#meterMessage{
+
+    min-height:50px;
+
+    max-width:400px;
+
+    line-height:1.7;
+}
+
+/* =======================================================
+   CELEBRATION
+   ======================================================= */
+
+#finalCelebration{
+
+    margin-top:25px;
+
+    animation:
+    celebrationAppear 1s ease;
+}
+
+@keyframes celebrationAppear{
+
+    from{
+        opacity:0;
+        transform:scale(.8);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+.celebration-title{
+
+    font-size:
+    clamp(2.8rem,7vw,5rem);
+
+    margin-bottom:10px;
+}
+
+.celebration-text{
+
+    max-width:650px;
+
+    margin:auto;
+
+    line-height:1.8;
+}
+
+.final-envelope{
+
+    margin:30px auto 0;
+
+    width:120px;
+    height:120px;
+
+    border-radius:25px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:4rem;
+
+    cursor:pointer;
+
+    background:
+    rgba(255,255,255,.08);
+
+    border:2px solid var(--pink);
+
+    animation:
+    pulseEnvelope 2s infinite;
+}
+
+@keyframes pulseEnvelope{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.1);
+    }
+}
+
+/* =======================================================
+   CORNER GIF
+   ======================================================= */
+
+.corner-gif{
+
+    position:absolute;
+
+    top:10px;
+    right:10px;
+
+    width:120px;
+
+    border-radius:20px;
+
+    opacity:.9;
+}
+
+/* =======================================================
+   HEART BURST
+   ======================================================= */
+
+.heart-pop{
+
+    position:fixed;
+
+    z-index:999;
+
+    pointer-events:none;
+
+    animation:
+    heartBurst 2s ease forwards;
+}
+
+@keyframes heartBurst{
+
+    0%{
+        opacity:0;
+        transform:
+        translateY(0)
+        scale(.5);
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:0;
+        transform:
+        translateY(-220px)
+        scale(1.4);
+    }
+}
+
+/* =======================================================
+   POPUPS
+   ======================================================= */
+
+.popup-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    background:
+    rgba(0,0,0,.7);
+
+    backdrop-filter:blur(10px);
+
+    z-index:1500;
+}
+
+.popup-overlay.show{
+    display:flex;
+}
+
+.popup-card{
+
+    width:min(550px,90vw);
+
+    padding:30px;
+
+    border-radius:26px;
+
+    background:
+    rgba(16,16,30,.95);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+    0 0 40px rgba(255,182,193,.25);
+
+    position:relative;
+
+    text-align:center;
+
+    line-height:1.9;
+}
+
+.popup-card h2,
+.popup-card h3{
+
+    margin-bottom:15px;
+
+    color:var(--pink);
+
+    font-family:
+    'Dancing Script',
+    cursive;
+}
+
+.close-popup{
+
+    position:absolute;
+
+    right:14px;
+    top:14px;
+width:38px;
+    height:38px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    color:white;
+
+    background:
+    rgba(255,255,255,.08);
+
+    transition:.3s;
+}
+
+.close-popup:hover{
+
+    transform:rotate(90deg);
+
+    background:
+    rgba(255,182,193,.25);
+}
+
+/* =======================================================
+   PHASE DOTS
+   ======================================================= */
+
+.phase-dots{
+
+    position:fixed;
+
+    left:50%;
+    bottom:18px;
+
+    transform:
+    translateX(-50%);
+
+    display:flex;
+
+    gap:12px;
+
+    z-index:500;
+}
+
+.dot{
+
+    width:12px;
+    height:12px;
+
+    border-radius:50%;
+
+    background:
+    rgba(255,255,255,.25);
+
+    transition:.4s;
+
+    cursor:pointer;
+}
+
+.dot.active{
+
+    background:
+    var(--pink);
+
+    box-shadow:
+    0 0 12px var(--pink),
+    0 0 24px var(--pink);
+
+    transform:
+    scale(1.2);
+}
+
+/* =======================================================
+   SHATTER EFFECT
+   ======================================================= */
+
+.shatter{
+
+    animation:
+    shatterGlass .9s ease;
+}
+
+@keyframes shatterGlass{
+
+    0%{
+        transform:
+        scale(1);
+        filter:none;
+    }
+
+    35%{
+        transform:
+        scale(1.05)
+        rotate(.5deg);
+    }
+
+    60%{
+        transform:
+        scale(.95)
+        rotate(-.5deg);
+        filter:
+        blur(3px);
+    }
+
+    100%{
+        transform:
+        scale(1);
+        filter:none;
+    }
+}
+
+/* =======================================================
+   PAGE FLIP
+   ======================================================= */
+
+.page-flip{
+
+    animation:
+    pageFlip .9s ease;
+}
+
+@keyframes pageFlip{
+
+    0%{
+        transform:
+        perspective(1200px)
+        rotateY(0deg);
+    }
+
+    50%{
+        transform:
+        perspective(1200px)
+        rotateY(90deg);
+    }
+
+    100%{
+        transform:
+        perspective(1200px)
+        rotateY(0deg);
+    }
+}
+
+/* =======================================================
+   CURTAIN EFFECT
+   ======================================================= */
+
+.curtain-drop{
+
+    animation:
+    curtainDrop 1s ease;
+}
+
+@keyframes curtainDrop{
+
+    0%{
+        clip-path:
+        inset(0 0 100% 0);
+    }
+
+    100%{
+        clip-path:
+        inset(0 0 0 0);
+    }
+}
+
+/* =======================================================
+   STAR BURST
+   ======================================================= */
+
+.star-burst{
+
+    animation:
+    starBurst 1s ease;
+}
+
+@keyframes starBurst{
+
+    0%{
+        transform:
+        scale(.3);
+        opacity:0;
+    }
+
+    50%{
+        transform:
+        scale(1.15);
+        opacity:1;
+    }
+
+    100%{
+        transform:
+        scale(1);
+        opacity:1;
+    }
+}
+
+/* =======================================================
+   FULL CELEBRATION MODE
+   ======================================================= */
+
+body.celebration-mode{
+
+    background:
+    linear-gradient(
+    135deg,
+    #ffb6c1,
+    #ffd9e6,
+    #ffeab5,
+    #fff5d6);
+
+    animation:
+    celebrationGlow 8s linear infinite;
+}
+
+@keyframes celebrationGlow{
+
+    0%{
+        filter:hue-rotate(0deg);
+    }
+
+    100%{
+        filter:hue-rotate(25deg);
+    }
+}
+
+body.celebration-mode .phase4{
+
+    background:
+    linear-gradient(
+    135deg,
+    rgba(255,182,193,.45),
+    rgba(255,235,180,.45),
+    rgba(255,255,255,.2));
+}
+
+body.celebration-mode .phase-title,
+body.celebration-mode .celebration-title{
+
+    text-shadow:
+    0 0 15px #fff,
+    0 0 30px #ffb6c1,
+    0 0 60px #ffb6c1;
+}
+
+/* =======================================================
+   FLOATING HEARTS CREATED BY JS
+   ======================================================= */
+
+.floating-heart{
+
+    position:fixed;
+
+    pointer-events:none;
+
+    z-index:999;
+
+    animation:
+    floatHeart 3s ease forwards;
+}
+
+@keyframes floatHeart{
+
+    0%{
+        opacity:0;
+        transform:
+        translateY(0)
+        scale(.4);
+    }
+
+    15%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:0;
+        transform:
+        translateY(-250px)
+        scale(1.6)
+        rotate(25deg);
+    }
+}
+
+/* =======================================================
+   EXTRA GLOW HELPERS
+   ======================================================= */
+
+.glow-pink{
+
+    box-shadow:
+    0 0 15px rgba(255,182,193,.5),
+    0 0 40px rgba(255,182,193,.3);
+}
+
+.glow-cyan{
+
+    box-shadow:
+    0 0 15px rgba(0,255,255,.5),
+    0 0 40px rgba(0,255,255,.3);
+}
+
+.glow-lavender{
+
+    box-shadow:
+    0 0 15px rgba(230,204,255,.5),
+    0 0 40px rgba(230,204,255,.3);
+}
+
+.glow-mint{
+
+    box-shadow:
+    0 0 15px rgba(181,234,215,.5),
+    0 0 40px rgba(181,234,215,.3);
+}
+
+/* =======================================================
+   SCROLLBAR (SAFETY)
+   ======================================================= */
+
+::-webkit-scrollbar{
+    width:0;
+    height:0;
+}
+
+/* =======================================================
+   MOBILE RESPONSIVE
+   ======================================================= */
+
+@media (max-width:900px){
+
+    .comic-strip{
+
+        grid-template-columns:
+        1fr;
+    }
+
+    .phase-content{
+
+        width:94%;
+        gap:16px;
+    }
+
+    .meter{
+
+        height:260px;
+    }
+
+    .sticky-grid{
+
+        grid-template-columns:
+        repeat(
+        auto-fit,
+        minmax(180px,1fr)
+        );
+    }
+
+    .flip-card{
+        height:200px;
+    }
+}
+
+@media (max-width:768px){
+
+    .main-title{
+        font-size:2.6rem;
+    }
+
+    .phase-title{
+        font-size:2.2rem;
+    }
+
+    .door-emoji{
+        font-size:6rem;
+    }
+
+    .gif-large{
+        width:240px;
+    }
+
+    .gif-medium{
+        width:190px;
+    }
+
+    .gif-small{
+        width:130px;
+    }
+
+    .letter-box{
+
+        padding:18px;
+
+        font-size:.95rem;
+    }
+
+    .solution-box{
+
+        padding:18px;
+    }
+
+    .popup-card{
+
+        padding:24px;
+    }
+
+    .meter{
+
+        width:75px;
+        height:220px;
+    }
+
+    #meterPercent{
+
+        font-size:1.2rem;
+    }
+}
+
+@media (max-width:600px){
+
+    .music-btn{
+
+        width:48px;
+        height:48px;
+
+        font-size:18px;
+    }
+
+    .phase-content{
+
+        max-height:95vh;
+    }
+
+    .main-subtitle{
+
+        font-size:.92rem;
+
+        line-height:1.7;
+    }
+
+    .glow-btn{
+
+        width:100%;
+
+        max-width:340px;
+
+        padding:14px;
+    }
+
+    .sticky-grid{
+
+        grid-template-columns:
+        1fr;
+    }
+
+    .flip-card{
+        height:180px;
+    }
+
+    .comic-card{
+
+        min-height:120px;
+    }
+
+    .corner-gif{
+
+        width:85px;
+    }
+
+    .hidden-trigger{
+
+        width:48px;
+        height:48px;
+
+        font-size:1.2rem;
+    }
+
+    .phase-dots{
+
+        gap:10px;
+    }
+
+    .dot{
+
+        width:10px;
+        height:10px;
+    }
+}
+
+@media (max-height:700px){
+
+    .phase-content{
+
+        transform:
+        scale(.9);
+    }
+}
+
+@media (max-height:600px){
+
+    .phase-content{
+
+        transform:
+        scale(.82);
+    }
+}
+
+/* =======================================================
+   FINAL UTILITIES
+   ======================================================= */
+
+.fade-in{
+
+    animation:
+    fadeIn .8s ease forwards;
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+}
+
+.slide-up{
+
+    animation:
+    slideUp .8s ease forwards;
+}
+
+@keyframes slideUp{
+
+    from{
+        opacity:0;
+        transform:
+        translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:
+        translateY(0);
+    }
+}
+
+.scale-in{
+
+    animation:
+    scaleIn .8s ease forwards;
+}
+
+@keyframes scaleIn{
+
+    from{
+        opacity:0;
+        transform:
+        scale(.85);
+    }
+
+    to{
+        opacity:1;
+        transform:
+        scale(1);
+    }
+}
+
+/* =======================================================
+   END OF STYLE.CSS
+   ======================================================= */
