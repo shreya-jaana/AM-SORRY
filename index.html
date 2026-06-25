@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Sarib 💗</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Background Particles -->
+    <div id="particle-container"></div>
+
+    <!-- Overlay Effects -->
+    <div id="transition-overlay"></div>
+    <div id="confetti-container"></div>
+
+    <!-- Music Button -->
+    <button id="musicToggle" class="music-btn">
+        🔊
+    </button>
+
+    <!-- Audio -->
+    <audio id="bgMusic" loop>
+        <!-- Add your music source in script.js or here -->
+    </audio>
+
+    <!-- ========================= -->
+    <!-- PHASE CONTAINER -->
+    <!-- ========================= -->
+
+    <main id="phaseWrapper">
+
+        <!-- ================================================= -->
+        <!-- PHASE 0 -->
+        <!-- ================================================= -->
+
+        <section class="phase active phase0" id="phase0">
+
+            <div class="phase-content">
+
+                <div class="door-container">
+
+                    <div class="door-glow"></div>
+
+                    <div class="door-emoji">
+                        🚪
+                    </div>
+
+                </div>
+
+                <h1 class="main-title">
+                    Hey... before you close this tab.
+                </h1>
+
+                <p class="main-subtitle">
+                    I made this for you.
+                    It took me a lot to put this together.
+                    Please don't leave.
+                </p>
+
+                <div class="down-arrow">
+                    ↓
+                </div>
+
+                <button
+                    class="glow-btn next-phase"
+                    data-next="1">
+                    Open the door 🚪
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- ================================================= -->
+        <!-- PHASE 1 -->
+        <!-- ================================================= -->
+
+        <section class="phase phase1" id="phase1">
+
+            <div class="phase-content">
+
+                <img
+                    class="phase-gif gif-large"
+                    src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZncwNGI5NXFmb2V2NWtuaTNocG1iMXU2cnJpYXNpYWl1aG1waGRhbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xdOaEIyjpG0bpNwVrn/giphy.gif"
+                    alt="crying baby">
+
+                <h2 class="phase-title">
+                    Okay. Let's talk about the outfit. 👗
+                </h2>
+
+                <div class="letter-box">
+
+                    <p class="line">You told me you didn't like what I wore.</p>
+                    <p class="line">And instead of just hearing you out... I fought back.</p>
+                    <p class="line">The whole time, I kept arguing.</p>
+                    <p class="line">Line after line. Point after point.</p>
+                    <p class="line">I didn't stop. I didn't listen.</p>
+                    <p class="line">I just kept going like I had to win.</p>
+                    <p class="line">And that was wrong of me.</p>
+                    <p class="line">You weren't attacking me, jaana.</p>
+                    <p class="line">You were just being honest.</p>
+                    <p class="line">And I turned that honesty into a battle.</p>
+                    <p class="line">I'm sorry for that.</p>
+
+                </div>
+
+                <img
+                    class="phase-gif gif-small right-gif"
+                    src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZndlY3RpM3ZrbmNwcHlkempqOGJlZmdzYzIxcWg2ZmFpbTczb2p1NCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/P53TSsopKicrm/giphy.gif"
+                    alt="dramatic crying">
+
+                <div class="solution-box cyan">
+
+                    <h3>
+                        What I'll do differently 💗
+                    </h3>
+
+                    <p>
+                        Next time you say something, I'll listen first.
+                        I won't argue just to win.
+                        Your feelings about how I present myself matter to me.
+                        I'll talk, not fight.
+                    </p>
+
+                </div>
+
+                <button
+                    class="hidden-trigger"
+                    data-popup="popup1">
+                    ⭐
+                </button>
+
+                <button
+                    class="glow-btn next-phase"
+                    data-next="2">
+                    There's more... Next →
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- ================================================= -->
+        <!-- PHASE 2 -->
+        <!-- ================================================= -->
+
+        <section class="phase phase2" id="phase2">
+
+            <div class="phase-content">
+
+                <div class="envelope-section">
+
+                    <div id="envelopeOne" class="envelope">
+                        🔒
+                    </div>
+
+                    <img
+                        class="phase-gif gif-medium"
+                        src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdnl0YTJmNnJvNHJlOXg2amdzeWNva2JxMTFsaTJnNzZyMmo5ZXdnNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ROF8OQvDmxytW/giphy.gif"
+                        alt="guilty reaction">
+
+                </div>
+
+                <h2 class="phase-title">
+                    Okay. This one's a little harder. 🔒
+                </h2>
+
+                <div id="typewriterLetter" class="letter-box hidden">
+
+                </div>
+
+                <img
+                    class="phase-gif gif-small left-gif"
+                    src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZnNoYW43OTBuZnlncndqZGhzNzUxbWM1dHdya2dweXl3YnhtajdoYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/GpkXJI9bqlhZ3JRgwQ/giphy.gif"
+                    alt="shocked">
+
+                <div class="floating-message">
+                    It wasn't intentional. But your feelings are still valid. 💙
+                </div>
+
+                <div class="solution-box lavender">
+
+                    <h3>
+                        My promise to you 💜
+                    </h3>
+
+                    <p>
+                        I'll think before I act, even in casual situations.
+                        Even with girls.
+                        Even when it feels harmless.
+                        Because what matters is how it makes YOU feel.
+                        And I'll always put that first.
+                    </p>
+
+                </div>
+
+                <button
+                    class="hidden-trigger"
+                    data-popup="popup2">
+                    ⭐
+                </button>
+
+                <button
+                    class="glow-btn next-phase"
+                    data-next="3">
+                    Last one. I promise. Next →
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- ================================================= -->
+        <!-- PHASE 3 -->
+        <!-- ================================================= -->
+
+        <section class="phase phase3" id="phase3">
+
+            <div class="phase-content">
+
+                <img
+                    class="phase-gif gif-large"
+                    src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExa2ZjcDZoOHl4Z3ltbXRpMXJmbGlpcXYxaXE3Z3EyaW5tc3B6amphOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fV8iuSEwLQ6005diSh/giphy.gif"
+                    alt="innocent">
+
+                <h2 class="phase-title">
+                    And then... the doctor. 🩺
+                </h2>
+
+                <div class="letter-box">
+
+                    <p class="line">You told me to go.</p>
+                    <p class="line">You knew about this appointment.</p>
+                    <p class="line">You were the one who said I should get checked.</p>
+                    <p class="line">So I went.</p>
+                    <p class="line">I did what was needed.</p>
+                    <p class="line">The doctor examined me.</p>
+                    <p class="line">That's what doctors do, jaana.</p>
+                    <p class="line">It's clinical. It's professional. It's safe.</p>
+                    <p class="line">I know it made you uncomfortable.</p>
+                    <p class="line">I understand why it bothered you.</p>
+                    <p class="line">Your feelings make sense to me.</p>
+                    <p class="line">But I need you to understand ...</p>
+                    <p class="line">There was nothing I could have done differently in that room.</p>
+                    <p class="line">A medical examination is not something I control.</p>
+                    <p class="line">And it doesn't change anything between us.</p>
+                    <p class="line">Not even a little bit.</p>
+                    <p class="line">My heart hasn't moved from where it belongs.</p>
+                    <p class="line">And that's with you.</p>
+                    <p class="line">Always.</p>
+
+                </div>
+
+                <div class="comic-strip">
+
+                    <div class="comic-card">
+                        🏥
+                        <span>He said: go to the doctor</span>
+                    </div>
+
+                    <div class="comic-card">
+                        👩‍⚕️
+                        <span>Doctor did her job. That's it.</span>
+                    </div>
+
+                    <div class="comic-card">
+                        💗
+                        <span>I came home. Still his. Always his.</span>
+                    </div>
+
+                </div>
+
+                <div class="floating-message">
+                    You sent me there, jaana. I just went. 💙
+                </div>
+
+                <div class="solution-box mint">
+
+                    <h3>
+                        What I'll do for you ✅
+                    </h3>
+
+                    <p>
+                        Even though this wasn't my fault...
+                        I see how much it affected you.
+                        So I'll figure out alternatives.
+                        I'll manage my health another way.
+                        I won't go back to a gynecologist if it hurts you this much.
+                        Your peace matters to me more than anything.
+                    </p>
+
+                </div>
+
+                <button
+                    class="hidden-trigger moon-trigger"
+                    data-popup="popup3">
+                    🌙
+                </button>
+
+                <button
+                    class="glow-btn next-phase"
+                    data-next="4">
+                    Now it's your turn. 💗 Next →
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- ================================================= -->
+        <!-- PHASE 4 -->
+        <!-- ================================================= -->
+
+        <section class="phase phase4" id="phase4">
+
+            <div class="phase-content final-phase">
+
+                <img
+                    class="corner-gif"
+                    src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnloNmRwZTNscGpndDltZXhyNHB1a2o3NXRsZDVweXd5dW53Y2E2aiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fxU6WfJ8eembhmZBC6/giphy.gif"
+                    alt="confetti">
+
+                <img
+                    class="phase-gif gif-large"
+                    src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExbGgxMWZ3NWxyZXN5bTBkOHV5dTJteW5rNWNiM2F2d3lmc3U3amdmNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/jhIK0Mx3aZTPgvkPWh/giphy.gif"
+                    alt="hearts">
+
+                <h2 class="phase-title giant">
+                    I'm done talking. Now I just need you. 💗
+                </h2>
+
+                <div class="sticky-grid">
+
+                    <div class="flip-card">
+                        <div class="flip-inner">
+                            <div class="flip-front pink">The Real Sorry</div>
+                            <div class="flip-back">
+                                Sarib, I'm sorry. Not to end the fight...
+                                but because you matter more than being right.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card">
+                        <div class="flip-inner">
+                            <div class="flip-front cyan">
+                                The Dramatic One 😭
+                            </div>
+                            <div class="flip-back">
+                                I AM DEVASTATED.
+                                Please forgive me.
+                                😭💗
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card">
+                        <div class="flip-inner">
+                            <div class="flip-front lavender">
+                                The Soft One
+                            </div>
+                            <div class="flip-back">
+                                Come back to me, jaana.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card">
+                        <div class="flip-inner">
+                            <div class="flip-front mint">
+                                The Honest One
+                            </div>
+                            <div class="flip-back">
+                                I told you everything.
+                                Always.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card">
+                        <div class="flip-inner">
+                            <div class="flip-front white-glow">
+                                The One That Counts
+                            </div>
+                            <div class="flip-back">
+                                I choose you.
+                                Every single time.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="forgive-section">
+
+                    <h3>
+                        Forgive-O-Meter 💗
+                    </h3>
+
+                    <div class="meter-wrapper">
+
+                        <div class="meter">
+                            <div id="meterFill"></div>
+                        </div>
+
+                        <div id="meterPercent">
+                            0%
+                        </div>
+
+                    </div>
+
+                    <p id="meterMessage">
+                        Press the button if your heart is softening...
+                    </p>
+
+                    <button
+                        id="forgiveBtn"
+                        class="glow-btn">
+                        Press to Forgive Me 💗
+                    </button>
+
+                </div>
+
+                <div id="finalCelebration" class="hidden">
+
+                    <h1 class="celebration-title">
+                        He forgave me 🎉💗
+                    </h1>
+
+                    <p class="celebration-text">
+                        I knew you would.
+                        Because that's who you are.
+                        And that's why I love you so much. 💗
+                    </p>
+
+                    <div id="finalEnvelope" class="final-envelope">
+                        💌
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ================================================= -->
+    <!-- POPUPS -->
+    <!-- ================================================= -->
+
+    <div class="popup-overlay" id="popup1">
+
+        <div class="popup-card">
+
+            <button class="close-popup">
+                ✕
+            </button>
+
+            <h3>PS 💗</h3>
+
+            <p>
+                Jaana, I wear things that feel comfortable to both of us.
+                But this time I made a mistake with that light cloth.
+                I genuinely didn't see a problem at first.
+                Thinking from your perspective now...
+                I get it.
+                I'll be more mindful.
+                You mean way more to me than any outfit ever will.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="popup-overlay" id="popup2">
+
+        <div class="popup-card">
+
+            <button class="close-popup">
+                ✕
+            </button>
+
+            <h3>Hidden Letter ⭐</h3>
+
+            <p>
+                I genuinely thought you'd understand.
+                I didn't hide it.
+                I came directly to you.
+                I'm not careless with your trust.
+                I just made a human mistake.
+                And I'm so sorry it hurt you.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="popup-overlay" id="popup3">
+
+        <div class="popup-card">
+
+            <button class="close-popup">
+                ✕
+            </button>
+
+            <h3>Moon Letter 🌙</h3>
+
+            <p>
+                You already knew, jaana.
+                You sent me.
+                But I still see your pain.
+                I just need you to see mine too.
+                Can we come back to each other?
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="popup-overlay" id="finalLetterPopup">
+
+        <div class="popup-card">
+
+            <button class="close-popup">
+                ✕
+            </button>
+
+            <h2>
+                For You 💗
+            </h2>
+
+            <p>
+                If you're reading this, you forgave me.
+                And that means everything to me.
+                Thank you for always choosing us.
+                Thank you for staying.
+                Thank you for being you.
+
+                I love you.
+
+                Always.
+
+                — Shreya 💗
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- Phase Dots -->
+
+    <div class="phase-dots">
+
+        <span class="dot active" data-phase="0"></span>
+        <span class="dot" data-phase="1"></span>
+        <span class="dot" data-phase="2"></span>
+        <span class="dot" data-phase="3"></span>
+        <span class="dot" data-phase="4"></span>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
